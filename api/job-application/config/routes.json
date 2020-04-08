@@ -1,0 +1,64 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/job-applications",
+      "handler": "job-application.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/job-applications/count",
+      "handler": "job-application.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/job-applications/:id",
+      "handler": "job-application.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/job-applications",
+      "handler": "job-application.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/job-applications/:id",
+      "handler": "job-application.update",
+      "config": {
+        "policies": [
+          "global::isOwner"
+        ]
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/job-applications/:id",
+      "handler": "job-application.delete",
+      "config": {
+        "policies": [
+          "global::isOwner"
+        ]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/job-applications/:id/status",
+      "handler": "job-application.updateStatus",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

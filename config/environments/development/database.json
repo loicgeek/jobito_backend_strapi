@@ -1,0 +1,29 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "bookshelf",
+      "settings": {
+        "client": "mysql",
+        "database": "strapi_deliveroo",
+        "host": "localhost",
+        "port": 3306,
+        "username": "root",
+        "password": ""
+      },
+      "options": {
+        "strict": true,
+        "acquireConnectionTimeout": 100000,
+        "pool": {
+          "min": 0,
+          "max": 50,
+          "createTimeoutMillis": 20000,
+          "acquireTimeoutMillis": 20000,
+          "idleTimeoutMillis": 3000,
+          "reapIntervalMillis": 1000,
+          "createRetryIntervalMillis": 100
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "jobs",
+  "info": {
+    "name": "Job"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "dead_line": {
+      "type": "datetime",
+      "required": true
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "job_applications": {
+      "collection": "job-application",
+      "via": "job"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "jobs"
+    },
+    "job_categories": {
+      "collection": "job-category",
+      "via": "jobs"
+    },
+    "job_reports": {
+      "collection": "job-report",
+      "via": "job"
+    },
+    "job_type": {
+      "model": "job-type"
+    },
+    "view_count": {
+      "type": "integer",
+      "default": 0
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "city": {
+      "model": "job-city",
+      "via": "jobs"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "open",
+        "close"
+      ],
+      "default": "open"
+    }
+  }
+}

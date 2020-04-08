@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "job_reports",
+  "info": {
+    "name": "JobReport"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "user": {
+      "via": "job_reports",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "job": {
+      "via": "job_reports",
+      "model": "job"
+    }
+  }
+}

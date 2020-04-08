@@ -1,0 +1,110 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/jobs",
+      "handler": "job.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/count",
+      "handler": "job.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/:id",
+      "handler": "job.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/jobs",
+      "handler": "job.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/jobs/:id",
+      "handler": "job.update",
+      "config": {
+        "policies": [
+          "global::isOwner"
+        ]
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/jobs/:id",
+      "handler": "job.delete",
+      "config": {
+        "policies": [
+          "global::isOwner"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/jobs/:id/apply",
+      "handler": "job.applyJob",
+      "config": {
+        "policies": []
+      }
+    },
+
+     {
+      "method": "POST",
+      "path": "/jobs/:id/reports",
+      "handler": "job.reportJob",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/jobs/:id/close",
+      "handler": "job.closeJob",
+      "config": {
+        "policies": [
+          "global::isOwner"
+        ]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/jobs/:id/incrementview",
+      "handler": "job.incrementView",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/:id/applications",
+      "handler": "job.getApplications",
+      "config": {
+        "policies": [
+          "global::isOwner"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/jobs/:id/reports",
+      "handler": "job.getReports",
+      "config": {
+        "policies": [
+        ]
+      }
+    }
+  ]
+}

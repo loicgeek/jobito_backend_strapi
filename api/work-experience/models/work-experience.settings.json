@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "work_experiences",
+  "info": {
+    "name": "WorkExperience"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "entreprise": {
+      "type": "string"
+    },
+    "user_profile": {
+      "model": "user-profile",
+      "via": "work_experiences"
+    },
+    "starting_date": {
+      "type": "date",
+      "required": true
+    },
+    "ending_date": {
+      "type": "date"
+    }
+  }
+}

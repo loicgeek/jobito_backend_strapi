@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "job_applications",
+  "info": {
+    "name": "JobApplication"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "job": {
+      "via": "job_applications",
+      "columnName": "job",
+      "model": "job"
+    },
+    "user": {
+      "via": "job_applications",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "cover_letter": {
+      "type": "richtext"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "sent",
+        "seen",
+        "accepted",
+        "rejected"
+      ],
+      "default": "sent"
+    }
+  }
+}

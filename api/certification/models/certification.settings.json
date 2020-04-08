@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "certifications",
+  "info": {
+    "name": "Certification"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "user_profile": {
+      "model": "user-profile",
+      "via": "certifications"
+    },
+    "starting_date": {
+      "type": "date",
+      "required": true
+    },
+    "ending_date": {
+      "type": "date"
+    }
+  }
+}

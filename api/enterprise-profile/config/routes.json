@@ -1,0 +1,56 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/enterprise-profiles",
+      "handler": "enterprise-profile.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/enterprise-profiles/count",
+      "handler": "enterprise-profile.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/enterprise-profiles/:id",
+      "handler": "enterprise-profile.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/enterprise-profiles",
+      "handler": "enterprise-profile.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/enterprise-profiles/:id",
+      "handler": "enterprise-profile.update",
+      "config": {
+        "policies": [
+            "global::isOwner"
+        ]
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/enterprise-profiles/:id",
+      "handler": "enterprise-profile.delete",
+      "config": {
+        "policies": [
+           "global::isOwner"
+        ]
+      }
+    }
+  ]
+}

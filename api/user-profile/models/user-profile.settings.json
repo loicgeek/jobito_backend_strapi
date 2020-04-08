@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "user_profiles",
+  "info": {
+    "name": "UserProfile"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "introduction": {
+      "type": "richtext"
+    },
+    "work_experiences": {
+      "via": "user_profile",
+      "collection": "work-experience"
+    },
+    "schools": {
+      "via": "user_profile",
+      "columnName": "schools",
+      "collection": "school"
+    },
+    "certifications": {
+      "via": "user_profile",
+      "collection": "certification"
+    },
+    "user": {
+      "via": "user_profile",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "profile": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}
